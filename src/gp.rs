@@ -326,7 +326,7 @@ impl DecimalPointAssumedRepresentation for [u8] {
 
 /// A satellite's elements classification
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub enum Classification {
     /// Declassfied objects or objects without a classification
     #[cfg_attr(feature = "serde", serde(rename = "U"))]
@@ -380,7 +380,7 @@ pub enum Classification {
 /// )?;
 /// #     Ok(())
 /// # }
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct Elements {
     /// The name associated with the satellite
